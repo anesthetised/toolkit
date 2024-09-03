@@ -3,12 +3,17 @@
 package env
 
 import (
+	"fmt"
 	"os"
 	"strconv"
 	"time"
 
 	"golang.org/x/exp/constraints"
 )
+
+func NewEmptyEnvError(name string) error {
+	return fmt.Errorf("%s environment variable must not be empty", name)
+}
 
 // Get retrieves an environment variable, converting it to the desirable type
 // constrained by a limited set of types which are applicable to environment values.
