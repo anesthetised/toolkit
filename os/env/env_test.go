@@ -149,6 +149,24 @@ func TestEnv(t *testing.T) {
 		})
 	})
 
+	t.Run("float32", func(t *testing.T) {
+		const testValue = float32(1)
+		err = os.Setenv(testKey, strconv.FormatFloat(float64(testValue), 'f', -1, 32))
+		assert.NoError(t, err)
+
+		val := Get[float32](testKey, 0)
+		assert.Equal(t, testValue, val)
+	})
+
+	t.Run("float64", func(t *testing.T) {
+		const testValue = float32(1)
+		err = os.Setenv(testKey, strconv.FormatFloat(float64(testValue), 'f', -1, 64))
+		assert.NoError(t, err)
+
+		val := Get[float64](testKey, 0)
+		assert.Equal(t, testValue, val)
+	})
+
 	t.Run("time.Duration", func(t *testing.T) {
 		const testValue time.Duration = 30 * time.Second
 
