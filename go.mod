@@ -7,6 +7,7 @@ require (
 	github.com/stretchr/testify v1.9.0
 	golang.org/x/exp v0.0.0-20240823005443-9b4947da3948
 	golang.org/x/exp/jsonrpc2 v0.0.0-20241009180824-f66d83c29e7c
+	google.golang.org/protobuf v1.35.2
 	modernc.org/sqlite v1.32.0
 )
 
