@@ -159,7 +159,7 @@ func TestEnv(t *testing.T) {
 	})
 
 	t.Run("float64", func(t *testing.T) {
-		const testValue = float32(1)
+		const testValue = float64(1)
 		err = os.Setenv(testKey, strconv.FormatFloat(float64(testValue), 'f', -1, 64))
 		assert.NoError(t, err)
 
