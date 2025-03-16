@@ -6,8 +6,8 @@ require (
 	entgo.io/ent v0.14.3
 	github.com/lib/pq v1.10.9
 	github.com/stretchr/testify v1.10.0
-	golang.org/x/exp v0.0.0-20250218142911-aa4b98e5adaa
-	golang.org/x/exp/jsonrpc2 v0.0.0-20250218142911-aa4b98e5adaa
+	golang.org/x/exp v0.0.0-20250228200357-dead58393ab7
+	golang.org/x/exp/jsonrpc2 v0.0.0-20250228200357-dead58393ab7
 	google.golang.org/protobuf v1.36.5
 	modernc.org/sqlite v1.36.0
 )
@@ -20,7 +20,7 @@ require (
 	github.com/ncruces/go-strftime v0.1.9 // indirect
 	github.com/pmezard/go-difflib v1.0.0 // indirect
 	github.com/remyoudompheng/bigfft v0.0.0-20230129092748-24d4a6f8daec // indirect
-	golang.org/x/exp/event v0.0.0-20250218142911-aa4b98e5adaa // indirect
+	golang.org/x/exp/event v0.0.0-20250228200357-dead58393ab7 // indirect
 	golang.org/x/sys v0.30.0 // indirect
 	golang.org/x/xerrors v0.0.0-20240903120638-7835f813f4da // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
