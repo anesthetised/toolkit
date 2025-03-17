@@ -8,6 +8,7 @@ import (
 type EncodingJSON struct{}
 
 func (e EncodingJSON) Encode(rw http.ResponseWriter, code int, payload any) error {
+	rw.Header().Set("Content-Type", "application/json; charset=utf-8")
 	rw.WriteHeader(code)
 
 	if err := json.NewEncoder(rw).Encode(payload); err != nil {
