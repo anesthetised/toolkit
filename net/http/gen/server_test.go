@@ -1,7 +1,6 @@
 package gen
 
 import (
-	"encoding/json"
 	"io"
 	"log/slog"
 	"testing"
@@ -11,5 +10,5 @@ import (
 
 func TestServer(t *testing.T) {
 	logger := slog.New(slog.NewTextHandler(io.Discard, nil))
-	assert.NotNil(t, NewServer[json.RawMessage](logger, EncodingJSON{}))
+	assert.NotNil(t, NewServer(logger, EncodingJSON{}))
 }

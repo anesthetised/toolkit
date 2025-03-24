@@ -7,14 +7,22 @@ import (
 
 type Server struct {
 	log *slog.Logger
-	enc EncodeDecoder
+	enc ServerEncodeDecoder
 }
 
-func NewServer(l *slog.Logger, enc EncodeDecoder) *Server {
+func NewServer(l *slog.Logger, enc ServerEncodeDecoder) *Server {
 	return &Server{
 		log: l,
 		enc: enc,
 	}
+}
+
+func (s *Server) Log() *slog.Logger {
+	return s.log
+}
+
+func (s *Server) Encoding() ServerEncodeDecoder {
+	return s.enc
 }
 
 func (s *Server) Response(rw http.ResponseWriter, code int, v any) error {
