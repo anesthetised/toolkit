@@ -12,3 +12,7 @@ lint:
 [working-directory: 'net/http/gen/example']
 build-genhttp-example:
     go build
+
+[no-cd]
+update-deps:
+  go get -u ./... && go mod tidy
