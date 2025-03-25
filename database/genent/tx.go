@@ -10,6 +10,7 @@ type Tx[T CommitRollbacker] struct {
 	v        T
 }
 
+// WrapTx wraps *ent.Tx, preventing a rollback once tx was committed.
 func WrapTx[T CommitRollbacker](v T) *Tx[T] {
 	return &Tx[T]{v: v}
 }
