@@ -1,18 +1,20 @@
 set shell := ["bash", "-c"]
 
 default:
-  just --list
+    just --list
 
+[no-cd]
 test:
-  go test $(go list ./...) -v
+    go test $(go list ./...) -v
 
+[no-cd]
 lint:
-  golangci-lint run
+    golangci-lint run
 
 [working-directory: 'net/http/gen/example']
 build-genhttp-example:
-    go build
+    go build -trimpath
 
 [no-cd]
 update-deps:
-  go get -u ./... && go mod tidy
+    go get -u ./... && go mod tidy
