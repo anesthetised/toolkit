@@ -5,6 +5,7 @@ import (
 	"database/sql/driver"
 	"fmt"
 
+	tdatabase "github.com/anesthetised/toolkit/database"
 	"modernc.org/sqlite"
 )
 
@@ -12,15 +13,13 @@ type sqliteDriver struct {
 	*sqlite.Driver
 }
 
-func (d sqliteDriver) Open(name string) (driver.Conn, error) {
-	conn, err := d.Driver.Open(name)
+func (d sqliteDriver) Open(dsn string) (driver.Conn, error) {
+	conn, err := d.Driver.Open(dsn)
 	if err != nil {
 		return conn, err
 	}
 
-	c := conn.(interface {
-		Exec(stmt string, args []driver.Value) (driver.Result, error)
-	})
+	c := conn.(tdatabase.Exec)
 
 	if _, err = c.Exec("PRAGMA foreign_keys = on;", nil); err != nil {
 		_ = conn.Close()
