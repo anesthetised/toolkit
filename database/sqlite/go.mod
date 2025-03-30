@@ -3,7 +3,7 @@ module github.com/anesthetised/toolkit/database/sqlite
 go 1.24.1
 
 require (
-	github.com/anesthetised/toolkit/database v0.0.0-20250330110342-9a42bb9d79f1
+	github.com/anesthetised/toolkit/database v0.0.0-20250330112735-823b7f124c11
 	modernc.org/sqlite v1.36.3
 )
 
