@@ -19,7 +19,7 @@ func (d sqliteDriver) Open(dsn string) (driver.Conn, error) {
 		return conn, err
 	}
 
-	c := conn.(tdatabase.Exec)
+	c := conn.(tdatabase.Executor)
 
 	if _, err = c.Exec("PRAGMA foreign_keys = on;", nil); err != nil {
 		_ = conn.Close()

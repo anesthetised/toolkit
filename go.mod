@@ -3,7 +3,6 @@ module github.com/anesthetised/toolkit
 go 1.23.0
 
 require (
-	github.com/lib/pq v1.10.9
 	github.com/stretchr/testify v1.10.0
 	golang.org/x/exp v0.0.0-20250305212735-054e65f0b394
 	golang.org/x/sync v0.12.0
