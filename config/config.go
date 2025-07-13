@@ -1,6 +1,8 @@
 package config
 
 import (
+	"fmt"
+
 	"github.com/anesthetised/toolkit/validate"
 )
 
@@ -24,6 +26,16 @@ func (c *Config[T]) Val() T {
 	return c.val
 }
 
+func (c *Config[T]) Ref() *T {
+	ref := c.val
+	return &ref
+}
+
 func (c *Config[T]) Validate() error {
-	return c.val.Validate()
+	ref := c.Ref()
+	validator, ok := any(ref).(validate.Validator)
+	if !ok {
+		return fmt.Errorf("type %T does not implement validate.Validator interface", ref)
+	}
+	return validator.Validate()
 }
