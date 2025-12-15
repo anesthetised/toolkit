@@ -1,12 +1,13 @@
 package slices
 
-// Map provides a convenient way to map slice into a different type.
-// It always returns a non-nil slice.
+// Map applies fn to each element of s and returns a new slice of the results.
+// The order of elements is preserved. The returned slice has length len(s) and
+// capacity cap(s). If s is nil, Map returns an empty (non-nil) slice.
 func Map[T, U any](s []T, fn func(i int, v T) U) []U {
-	ms := []U{}
+	ms := make([]U, len(s), cap(s))
 
 	for i, v := range s {
-		ms = append(ms, fn(i, v))
+		ms[i] = fn(i, v)
 	}
 
 	return ms
