@@ -1,7 +1,7 @@
-set shell := ["bash", "-c"]
+set shell := ["sh", "-c"]
 
 default:
-    just --list
+    @just --list
 
 [no-cd]
 test:
